@@ -3,11 +3,19 @@ import Button from './Button.js';
 import Result from './Result.js';
 
 class App extends Component {
+  state = { counter: 10 };
+
+  incrementCounter = () => {
+    this.setState((previousState) => ({
+      counter: previousState.counter + 1
+    }));
+  };
+
   render() {
     return (
       <div>
-        <Button />
-        <Result />
+        <Button onClickFunction={this.incrementCounter} />
+        <Result counter={this.state.counter} />
       </div>
     );
   }
