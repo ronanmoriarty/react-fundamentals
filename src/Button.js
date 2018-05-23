@@ -1,9 +1,13 @@
 import React, { Component } from 'react';
 
-const Button = (props) => {
-    return (
-        <button>{props.label}</button>
-    );
-};
+class Button extends Component {
+    state = { counter: 10 };
+
+    render() {
+        return (
+            <button>{this.state.counter}</button>
+        );
+    }
+}
 
 export default Button;
